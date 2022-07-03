@@ -3,18 +3,16 @@ import ContactCard from "./ContactCard";
 
 const ContactList = (props) => {
 
-    console.log('contactlist props '+props.contacts);
-
-    const renderContactList = props.contacts.map((contact) => {
-         return <ContactCard contact={contact} />;          
+    const renderContactList = props.contacts && props.contacts.map((contact) => {
+        return <ContactCard key={contact.email} contact={contact} />;
     });
 
     return (
         <div className="ui celled list">
-        {renderContactList}
+            {renderContactList}
         </div>
     );
-    
+
 };
 
 export default ContactList;
