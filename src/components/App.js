@@ -49,9 +49,10 @@ function App() {
     <div className='ui container'>
       <Router>
          <Header />
-         <Routes>          
-          <Route path="/add" element={<AddContact/>}></Route>
-          <Route path="/" element={<ContactList/>}></Route>
+         <Routes>                    
+         <Route path="/" exact element={<ContactList getContactHandler={deleteContactHandler} contacts={contacts} />}></Route>
+          <Route path="/add" exact element={<AddContact addContactHandler={addContactHandler} />}></Route>
+          
         </Routes>  
       </Router>
       {/* <AddContact addContactHandler={addContactHandler} />
