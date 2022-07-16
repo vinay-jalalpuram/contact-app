@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class AddContact extends React.Component {
 
     state = {
@@ -8,14 +9,15 @@ class AddContact extends React.Component {
     };
 
     add = (e) => {
-        e.preventDefault();
+        e.preventDefault();        
         console.log('Entere add method...');
         if (this.state.name == "" || this.state.email == "") {
             alert('Invalid input entered');
             return;
         }
         this.props.addContactHandler(this.state);
-        this.setState({ name: "", email: "" });
+        this.setState({ name: "", email: "" });       
+       
     };
 
     render() {

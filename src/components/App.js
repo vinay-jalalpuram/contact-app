@@ -6,6 +6,7 @@ import AddContact from './AddContact';
 import ContactList from './ContactList';
 import { v4 as uuid } from 'uuid';
 import DemoApp from './DemoApp';
+import ContactDetails from './ContactDetails';
 
 const LOCAL_STORAGE_KEY = 'contacts';
 
@@ -52,7 +53,7 @@ function App() {
          <Routes>                    
          <Route path="/" exact element={<ContactList getContactHandler={deleteContactHandler} contacts={contacts} />}></Route>
           <Route path="/add" exact element={<AddContact addContactHandler={addContactHandler} />}></Route>
-          
+          <Route path="/contact/:id" exact element={<ContactDetails/>}></Route>          
         </Routes>  
       </Router>
       {/* <AddContact addContactHandler={addContactHandler} />
